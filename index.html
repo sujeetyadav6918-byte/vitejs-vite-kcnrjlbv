@@ -5,9 +5,541 @@
     <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- <title>Vite + React</title> -->
+    
   </head>
   <body>
     <div id="root"></div>
+
+    <p>Example 1: How to Print an Integer entered by an user in Kotlin using Scanner
+import java.util.Scanner
+
+fun main(args: Array<String>) {
+
+    // Creates a reader instance which takes
+    // input from standard input - keyboard
+    val reader = Scanner(System.`in`)
+    print("Enter a number: ")
+
+    // nextInt() reads the next integer from the keyboard
+    var integer:Int = reader.nextInt()
+
+    // println() prints the following line to the output screen
+    println("You entered: $integer")
+}
+Output:
+Enter a number: 10
+You entered: 10
+
+Example 2: How to Print an Integer without using Scanner
+fun main(args: Array<String>) {
+
+    print("Enter a number: ")
+
+    // reads line from standard input - keyboard
+    // and !! operator ensures the input is not null
+    val stringInput = readLine()!!
+
+    // converts the string input to integer
+    var integer:Int = stringInput.toInt()
+
+    // println() prints the following line to the output screen
+    println("You entered: $integer")
+}
+Output:
+Enter a number: 10
+You entered: 10
+Example: Kotlin Program to Add Two Integers
+fun main(args: Array<String>) {
+
+    val first: Int = 10
+    val second: Int = 20
+
+    val sum = first + second
+
+    println("The sum is: $sum")
+}
+When you run the program, the output will be:
+The sum is: 30
+Example: Multiply Two Floating Point Numbers
+fun main(args: Array<String>) {
+
+    val first = 1.5f
+    val second = 2.0f
+
+    val product = first * second
+
+    println("The product is: $product")
+}
+When you run the program, the output will be:
+The product is: 3.0
+Example: Find ASCII value of a character
+fun main(args: Array) {
+
+    val c = 'a'
+    val ascii = c.toInt()
+
+    println("The ASCII value of $c is: $ascii")
+}
+Output:
+The ASCII value of a is: 97
+Example: Compute Quotient and Remainder
+fun main(args: Array<String>) {
+
+    val dividend = 25
+    val divisor = 4
+
+    val quotient = dividend / divisor
+    val remainder = dividend % divisor
+
+    println("Quotient = $quotient")
+    println("Remainder = $remainder")
+}
+When you run the program, the output will be:
+Quotient = 6
+Remainder = 1
+Example 1: Swap two numbers using temporary variable
+fun main(args: Array<String>) {
+
+    var first = 1.20f
+    var second = 2.45f
+
+    println("--Before swap--")
+    println("First number = $first")
+    println("Second number = $second")
+
+    // Value of first is assigned to temporary
+    val temporary = first
+
+    // Value of second is assigned to first
+    first = second
+
+    // Value of temporary (which contains the initial value of first) is assigned to second
+    second = temporary
+
+    println("--After swap--")
+    println("First number = $first")
+    println("Second number = $second")
+}
+When you run the program, the output will be:
+--Before swap--
+First number = 1.2
+Second number = 2.45
+--After swap--
+First number = 2.45
+Second number = 1.2
+Example 1: Check whether a number is even or odd using if...else statement
+import java.util.*
+
+fun main(args: Array<String>) {
+
+    val reader = Scanner(System.`in`)
+
+    print("Enter a number: ")
+    val num = reader.nextInt()
+
+    if (num % 2 == 0)
+        println("$num is even")
+    else
+        println("$num is odd")
+}
+When you run the program, the output will be:
+Enter a number: 12
+12 is even
+Example: Find Frequency of Character
+fun main(args: Array<String>) {
+    val str = "This website is awesome."
+    val ch = 'e'
+    var frequency = 0
+
+    for (i in 0..str.length - 1) {
+        if (ch == str[i]) {
+            ++frequency
+        }
+    }
+
+    println("Frequency of $ch = $frequency")
+}
+When you run the program, the output will be:
+Frequency of e = 4
+Example 1: Check whether an alphabet is vowel or consonant using if..else statement
+fun main(args: Array<String>) {
+
+    val ch = 'i'
+
+    val vowelConsonant = if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') "vowel" else "consonant"
+
+    println("$ch is $vowelConsonant")
+}
+When you run the program, the output will be:
+i is vowel
+Example 1: Find Largest Among three numbers using if..else statement
+fun main(args: Array<String>) {
+
+    val n1 = -4.5
+    val n2 = 3.9
+    val n3 = 2.5
+
+    if (n1 >= n2 && n1 >= n3)
+        println("$n1 is the largest number.")
+    else if (n2 >= n1 && n2 >= n3)
+        println("$n2 is the largest number.")
+    else
+        println("$n3 is the largest number.")
+}
+When you run the program, the output will be:
+3.9 is the largest number.
+Example: Kotlin Program to Find Roots of a Quadratic Equation
+fun main(args: Array<String>) {
+
+    val a = 2.3
+    val b = 4
+    val c = 5.6
+    val root1: Double
+    val root2: Double
+    val output: String
+
+    val determinant = b * b - 4.0 * a * c
+
+    // condition for real and different roots
+    if (determinant > 0) {
+        root1 = (-b + Math.sqrt(determinant)) / (2 * a)
+        root2 = (-b - Math.sqrt(determinant)) / (2 * a)
+
+        output = "root1 = %.2f and root2 = %.2f".format(root1, root2)
+    }
+    // Condition for real and equal roots
+    else if (determinant == 0.0) {
+        root2 = -b / (2 * a)
+        root1 = root2
+
+        output = "root1 = root2 = %.2f;".format(root1)
+    }
+    // If roots are not real
+    else {
+        val realPart = -b / (2 * a)
+        val imaginaryPart = Math.sqrt(-determinant) / (2 * a)
+
+        output = "root1 = %.2f+%.2fi and root2 = %.2f-%.2fi".format(realPart, imaginaryPart, realPart, imaginaryPart)
+    }
+
+    println(output)
+}
+When you run the program, the output will be:
+root1 = -0.87+1.30i and root2 = -0.87-1.30i
+Example 1: Kotlin Program to Check a Leap Year using if else statement
+fun main(args: Array<String>) {
+
+    val year = 1900
+    var leap = false
+
+    if (year % 4 == 0) {
+        if (year % 100 == 0) {
+            // year is divisible by 400, hence the year is a leap year
+            leap = year % 400 == 0
+        } else
+            leap = true
+    } else
+        leap = false
+
+    println(if (leap) "$year is a leap year." else "$year is not a leap year.")
+}
+When you run the program, the output will be:
+1900 is not a leap year.
+Example 1: Find Factorial of a number using for loop
+fun main(args: Array<String>) {
+
+    val num = 10
+    var factorial: Long = 1
+    for (i in 1..num) {
+        // factorial = factorial * i;
+        factorial *= i.toLong()
+    }
+    println("Factorial of $num = $factorial")
+}
+When you run the program, the output will be:
+Factorial of 10 = 3628800
+Example: Factorial of a Number Using Recursion
+fun main(args: Array<String>) {
+    val num = 6
+    val factorial = multiplyNumbers(num)
+    println("Factorial of $num = $factorial")
+}
+
+fun multiplyNumbers(num: Int): Long {
+    if (num >= 1)
+        return num * multiplyNumbers(num - 1)
+    else
+        return 1
+}
+When you run the program, the output will be:
+Factorial of 6 = 720
+Example: Sum of Natural Numbers Using Recursion
+fun main(args: Array<String>) {
+    val number = 20
+    val sum = addNumbers(number)
+    println("Sum = $sum")
+}
+
+fun addNumbers(num: Int): Int {
+    if (num != 0)
+        return num + addNumbers(num - 1)
+    else
+        return num
+}
+When you run the program, the output will be:
+Sum = 210
+Example 1: Find GCD of two numbers using while loop
+fun main(args: Array<String>) {
+    val n1 = 81
+    val n2 = 153
+    var gcd = 1
+
+    var i = 1
+    while (i <= n1 && i <= n2) {
+        // Checks if i is factor of both integers
+        if (n1 % i == 0 && n2 % i == 0)
+            gcd = i
+        ++i
+    }
+
+    println("G.C.D of $n1 and $n2 is $gcd")
+}
+When you run the program, the output will be:
+G.C.D of 81 and 153 is 9
+Example 1: Kotlin Program to calculate LCM using while Loop and if Statement
+fun main(args: Array<String>) {
+    val n1 = 72
+    val n2 = 120
+    var lcm: Int
+
+    // maximum number between n1 and n2 is stored in lcm
+    lcm = if (n1 > n2) n1 else n2
+
+    // Always true
+    while (true) {
+        if (lcm % n1 == 0 && lcm % n2 == 0) {
+            println("The LCM of $n1 and $n2 is $lcm.")
+            break
+        }
+        ++lcm
+    }
+}
+When you run the program, the output will be:
+The LCM of 72 and 120 is 360.
+Example 2: Kotlin Program to Calculate LCM using GCD
+fun main(args: Array<String>) {
+    val n1 = 72
+    val n2 = 120
+    var gcd = 1
+
+    var i = 1
+    while (i <= n1 && i <= n2) {
+        // Checks if i is factor of both integers
+        if (n1 % i == 0 && n2 % i == 0)
+            gcd = i
+        ++i
+    }
+
+    val lcm = n1 * n2 / gcd
+    println("The LCM of $n1 and $n2 is $lcm.")
+}
+Example: Kotlin break
+fun main(args: Array<String>) {
+
+    for (i in 1..10) {
+        if (i == 5) {
+            break
+        }
+        println(i)
+    }
+}
+When you run the program, the output will be:
+1
+2
+3
+4
+Example: Kotlin continue
+fun main(args: Array<String>) {
+
+    for (i in 1..5) {
+        println("$i Always printed.")
+        if (i > 1 && i < 5) {
+            continue
+        }
+        println("$i Not always printed.")
+    }
+}
+When you run the program, the output will be:
+1 Always printed.
+1 Not always printed.
+2 Always printed.
+3 Always printed.
+4 Always printed.
+5 Always printed.
+5 Not always printed.
+Example: Simple when Expression
+fun main(args: Array<String>) {
+
+    val a = 12
+    val b = 5
+
+    println("Enter operator either +, -, * or /")
+    val operator = readLine()
+
+    val result = when (operator) {
+        "+" -> a + b
+        "-" -> a - b
+        "*" -> a * b
+        "/" -> a / b
+        else -> "$operator operator is invalid operator."
+    }
+
+    println("result = $result")
+}
+When you run the program, the output will be something like:
+Enter operator either +, -, * or /
+*
+result = 60
+
+
+
+Program to Add to two number
+
+fun main() {
+    // Prompt the user for input
+    println("Enter the first number:")
+    val num1 = readLine()?.toIntOrNull() // Read and convert input to integer
+
+    println("Enter the second number:")
+    val num2 = readLine()?.toIntOrNull() // Read and convert input to integer
+
+    if (num1 != null && num2 != null) {
+        // If both inputs are valid, add them
+        val sum = num1 + num2
+        println("The sum of $num1 and $num2 is: $sum")
+    } else {
+        println("Invalid input! Please enter valid integers.")
+    }
+}
+
+
+Example: Kotlin Class and Object
+class Lamp {
+
+    // property (data member)
+    private var isOn: Boolean = false
+
+    // member function
+    fun turnOn() {
+        isOn = true
+    }
+
+    // member function
+    fun turnOff() {
+        isOn = false
+    }
+
+    fun displayLightStatus(lamp: String) {
+        if (isOn == true)
+            println("$lamp lamp is on.")
+        else
+            println("$lamp lamp is off.")
+    }
+}
+
+fun main(args: Array<String>) {
+
+    val l1 = Lamp() // create l1 object of Lamp class
+    val l2 = Lamp() // create l2 object of Lamp class
+
+    l1.turnOn()
+    l2.turnOff()
+
+    l1.displayLightStatus("l1")
+    l2.displayLightStatus("l2")
+}
+When you run the program, the output will be:
+l1 Lamp is on.
+l2 Lamp is off.
+Example: Primary Constructor
+fun main(args: Array<String>) {
+
+    val person1 = Person("Joe", 25)
+
+    println("First Name = ${person1.firstName}")
+    println("Age = ${person1.age}")
+}
+
+class Person(val firstName: String, var age: Int) {
+
+}
+	When you run the program, the output will be:
+First Name = Joe
+Age = 25
+Default Value in Primary Constructor
+fun main(args: Array<String>) {
+
+    println("person1 is instantiated")
+    val person1 = Person("joe", 25)
+
+    println("person2 is instantiated")
+    val person2 = Person("Jack")
+
+    println("person3 is instantiated")
+    val person3 = Person()
+}
+
+class Person(_firstName: String = "UNKNOWN", _age: Int = 0) {
+    val firstName = _firstName.capitalize()
+    var age = _age
+
+    // initializer block
+    init {
+        println("First Name = $firstName")
+        println("Age = $age\n")
+    }
+}
+When you run the program, the output will be:
+First Name = Joe
+Age = 25
+
+person2 is instantiated
+First Name = Jack
+Age = 0
+
+person3 is instantiated
+First Name = UNKNOWN
+Age = 0
+Kotlin Secondary Constructor
+fun main(args: Array<String>) {
+
+    val p1 = AuthLog("Bad Password")
+}
+
+open class Log {
+    var data: String = ""
+    var numberOfData = 0
+    constructor(_data: String) {
+
+    }
+    constructor(_data: String, _numberOfData: Int) {
+        data = _data
+        numberOfData = _numberOfData
+        println("$data: $numberOfData times")
+    }
+}
+
+class AuthLog: Log {
+    constructor(_data: String): this("From AuthLog -> " + _data, 10) {
+    }
+
+    constructor(_data: String, _numberOfData: Int): super(_data, _numberOfData) {
+    }
+}
+When you run the program, the output will be:
+From AuthLog -> Bad Password: 10 times
+
+</p>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
